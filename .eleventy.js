@@ -11,7 +11,9 @@ module.exports = function(eleventyConfig) {
   });
 
   // date filter
-  eleventyConfig.addFilter("date", function(date, format) {
+  eleventyConfig.addFilter("date", function(date, format, locale) {
+    locale = locale ? locale : "en";
+    moment.locale(locale);
     return moment(date).format(format);
   });
 
