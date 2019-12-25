@@ -1,21 +1,17 @@
-const moment = require("moment");
 const now = new Date();
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // collections
-  // nothing here yet
-
-  // limit filter
-  eleventyConfig.addFilter("limit", function(array, limit) {
-    return array.slice(0, limit);
+  eleventyConfig.addCollection("blogposts", function (collection) {
+    return collection.getFilteredByGlob("./src/blog/*.md");
   });
 
-  // date filter
-  eleventyConfig.addFilter("date", function(date, format, locale) {
-    locale = locale ? locale : "en";
-    moment.locale(locale);
-    return moment(date).format(format);
-  });
+  // filters
+  eleventyConfig.addFilter("date", require("./src/_filters/date.js"));
+  eleventyConfig.addFilter("exclude", require("./src/_filters/exclude.js"));
+  eleventyConfig.addFilter("include", require("./src/_filters/include.js"));
+  eleventyConfig.addFilter("jsonify", require("./src/_filters/jsonify.js"));
+  eleventyConfig.addFilter("sortby", require("./src/_filters/sortby.js"));
 
   // copy files
   eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
