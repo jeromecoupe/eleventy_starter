@@ -14,16 +14,16 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("sortby", require("./src/_filters/sortby.js"));
 
   // copy files
-  eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
-  eleventyConfig.addPassthroughCopy("./src/assets/img/");
-  eleventyConfig.addPassthroughCopy("./src/assets/fonts/");
+  eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
+  eleventyConfig.addPassthroughCopy("./src/assets/img");
+  eleventyConfig.addPassthroughCopy("./src/assets/fonts");
 
   // override default config
   return {
     dir: {
       input: "./src/",
-      output: "./dist/"
-    }
+      output: "./dist/",
+    },
   };
 };

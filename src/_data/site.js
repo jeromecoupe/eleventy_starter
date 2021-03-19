@@ -5,5 +5,5 @@ module.exports = {
   metaImage: "https://webstoemp.com/assets/img/socialmedia.jpg",
   authorName: "Jérôme Coupé",
   authorTwitter: "@jeromecoupe",
-  buildDate: new Date()
+  buildDate: new Date(),
 };
