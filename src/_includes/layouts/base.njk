@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{ metaTitle ~ " - " if metaTitle }}{{ site.title }}</title>
   <meta name="description" content="{{ metaDescription if metaDescription else site.description }}">
 
-  <!-- Open Graph + Twitter -->
+  {# preload #}
+
+  {# Open Graph + Twitter #}
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="{{ site.authorTwitter }}">
   <meta property="og:url" content="{{ site.url }}">
@@ -15,16 +16,23 @@
   <meta property="og:description" content="{{ metaDescription if metaDescription else site.description }}">
   <meta property="og:image" content="{{ metaImage if metaImage else site.metaImage }}">
 
-  <!-- Apple icon (minimal) -->
+  {# Apple icon (minimal) #}
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/assets/css/main.min.css?ref={{ site.buildDate | date('X') }}">
+  {# Preload fonts #}
+  <link rel="preload" as="font" crossorigin type="font/woff2" href="/assets/fonts/opensans-regular-webfont.woff2">
+  <link rel="preload" as="font" crossorigin type="font/woff2" href="/assets/fonts/opensans-italic-webfont.woff2">
+  <link rel="preload" as="font" crossorigin type="font/woff2" href="/assets/fonts/opensans-semibold-webfont.woff2">
+
+  {# JS (defer) #}
+  <script src="/assets/js/bundle.min.js?ref={{ site.buildDate | date('X') }}" defer></script>
+
+  {# CSS #}
+  <link rel="stylesheet" href="/assets/css/main.css?ref={{ site.buildDate | date('X') }}">
 </head>
 <body>
-  {% include "partials/header.njk" %}
+  {% include "components/header.njk" %}
   {% block content %}{% endblock %}
-  {% include "partials/footer.njk" %}
-  <script src="/assets/js/bundle.min.js?ref={{ site.buildDate | date('X') }}"></script>
+  {% include "components/footer.njk" %}
 </body>
 </html>

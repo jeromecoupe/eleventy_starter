@@ -3,7 +3,7 @@
   publish = "dist/"
 
   # Default build command.
-  command = "gulp build"
+  command = "npm run build"
 
   # Functions directory to deploy to AWS
   # functions = "functions/"
