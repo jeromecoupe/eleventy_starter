@@ -1,5 +1,8 @@
 @import "settings/_settings.colors.scss";
 @import "settings/_settings.fonts.scss";
+@import "settings/_settings.breakpoints.scss";
+
+@import "mixins/mixins.breakpoints.scss";
 
 @import "base/_base.fonts.scss";
 @import "base/_base.margins.scss";

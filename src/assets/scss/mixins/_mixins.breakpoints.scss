@@ -1,0 +1,27 @@
+// ----------------------------------
+// =settings
+// ----------------------------------
+
+$breakpoints-map: (
+  "small": "all and (min-width: 500px)",
+  "medium": "all and (min-width: 760px)",
+  "large": "all and (min-width: 1024px)",
+  "xlarge": "all and (min-width: 1400px)",
+) !default;
+
+// ----------------------------------
+// =mixin
+// ----------------------------------
+
+@mixin breakpoint($name) {
+  // check if name exists
+  @if (map-has-key($breakpoints-map, $name) == false) {
+    @error "$breakpoints-map does not contain a key named #{$name}";
+  }
+
+  // create media query
+  $query: map-get($breakpoints-map, $name);
+  @media #{$query} {
+    @content;
+  }
+}
