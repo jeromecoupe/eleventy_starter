@@ -1,5 +1,5 @@
 function init() {
-  const message = "Hello World, here I stand";
+  const message = "Hello World";
   messageMe(message);
 }
 
