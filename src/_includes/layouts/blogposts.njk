@@ -1,0 +1,38 @@
+{% extends "layouts/base.njk" %}
+
+{% import "macros/dates.njk" as dates %}
+
+{% set metaTitle = title %}
+{% set metaDescription = intro %}
+{% set metaImage = site.url ~ "/assets/img/blogposts/600x600/" ~ mainImage %}
+
+{% set navSection = "blog" %}
+
+{% block content %}
+<article class="c-blogpost">
+  <div class="l-container">
+    <picture>
+      <source srcset="/assets/img/blogposts/{{ mainImage }} 1500w,
+                      /assets/img/blogposts/1024x576/{{ mainImage }} 1024w"
+              sizes="(min-width: 1500px) 1500px,
+                    100vw"
+              media="(min-width: 600px)">
+      <img class="c-blogpost__image  o-fluidimage"
+          src="/assets/img/blogposts/600x600/{{ mainImage }}"
+          alt="{{ mainImagAlt }}">
+    </picture>
+
+    <div class="c-blogpost__content">
+      <header>
+        <p>{{ dates.htmldate(page.date) }}</p>
+        <h1 class="c-h1">{{ title }}</h1>
+        <p>{{ intro }}</p>
+      </header>
+      <div class="c-wysiwyg">
+        {{ content | safe }}
+      </div>
+    </div>
+
+  </div>
+</article>
+{% endblock %}

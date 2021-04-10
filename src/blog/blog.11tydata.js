@@ -1,4 +1,4 @@
 module.exports = {
-  layout: "layouts/blog.njk",
+  layout: "layouts/blogposts.njk",
   permalink: "blog/{{ page.fileSlug }}/index.html",
 };

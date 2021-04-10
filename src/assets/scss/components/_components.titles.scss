@@ -1,0 +1,29 @@
+// ----------------------------------
+// =titles
+// ----------------------------------
+
+.c-h1,
+.c-h2,
+.c-h3,
+.c-h4 {
+  font-weight: 600;
+  font-family: var(--fontstack-main);
+  line-height: 1.2;
+  margin-bottom: 0.75em;
+}
+
+.c-h1 {
+  font-size: calc(39 / 16 * 1rem);
+}
+
+.c-h2 {
+  font-size: calc(31 / 16 * 1rem);
+}
+
+.c-h3 {
+  font-size: calc(25 / 16 * 1rem);
+}
+
+.c-h4 {
+  font-size: calc(20 / 16 * 1rem);
+}
