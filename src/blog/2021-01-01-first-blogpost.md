@@ -1,6 +1,8 @@
 ---
 title: "A first blogpost"
 intro: "Let us have a dedicated introduction to this blogpost"
+mainImage: "test.jpg"
+mainImageAlt: "Dagestanese village - Hans Heiner Buhr on Unsplash"
 categories: ["test", "travels"]
 ---
 

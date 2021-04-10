@@ -1,6 +1,8 @@
 ---
 title: "A fifth blogpost"
 intro: "A simple introduction to this blogpost"
+mainImage: "test.jpg"
+mainImageAlt: "Dagestanese village - Hans Heiner Buhr on Unsplash"
 categories: ["travel", "coding"]
 ---
 

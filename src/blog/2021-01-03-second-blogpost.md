@@ -1,6 +1,8 @@
 ---
 title: "A second blogpost"
 intro: "Let us have another introduction to this blogpost"
+mainImage: "test.jpg"
+mainImageAlt: "Dagestanese village - Hans Heiner Buhr on Unsplash"
 categories: ["test", "cooking"]
 ---
 

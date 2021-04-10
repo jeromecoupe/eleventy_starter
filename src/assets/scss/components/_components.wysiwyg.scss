@@ -1,0 +1,26 @@
+// -------------------------------------
+// Titles in wysiwyg
+// -------------------------------------
+
+.c-wysiwyg {
+  h2,
+  h3,
+  h4 {
+    font-weight: 600;
+    font-family: var(--fontstack-main);
+    line-height: 1.2;
+    margin-bottom: 0.75em;
+  }
+
+  h2 {
+    font-size: calc(31 / 16 * 1rem);
+  }
+
+  h3 {
+    font-size: calc(25 / 16 * 1rem);
+  }
+
+  h4 {
+    font-size: calc(20 / 16 * 1rem);
+  }
+}
