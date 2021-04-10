@@ -1,0 +1,42 @@
+---
+pagination:
+  data: collections.blogposts
+  size: 2
+  alias: blogposts
+permalink: blog{% if pagination.pageNumber > 0 %}/p{{ pagination.pageNumber + 1 }}{% endif %}/index.html
+---
+{% extends "layouts/base.njk" %}
+
+{% import "macros/dates.njk" as dates %}
+
+{% set metaTitle = "Blog" %}
+{% set metaDescription = "This is an SEO description for this page" %}
+{% set metaImage = site.metaImage %}
+
+{% set navSection = "blog" %}
+
+{% block content %}
+<main>
+  <div class="l-container">
+
+    <h1>Blog archive</h1>
+
+    {% for item in blogposts %}
+      {% if loop.first %}<ul>{% endif %}
+        <li>
+          <article>
+            <p>{{ dates.htmldate(item.date) }}</p>
+            <h2><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
+            <p>{{ item.data.intro }}</p>
+          </article>
+        </li>
+      {% if loop.last %}</ul>{% endif %}
+    {% else %}
+      <p>No blogposts found</p>
+    {% endfor %}
+
+    {% include "components/pagination.njk" %}
+
+  </div>
+</main>
+{% endblock %}

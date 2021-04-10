@@ -5,6 +5,11 @@ module.exports = [
     navUrl: "/",
   },
   {
+    navLabel: "Blog",
+    navTrigger: "blog",
+    navUrl: "/blog/",
+  },
+  {
     navLabel: "About",
     navTrigger: "about",
     navUrl: "/about/",

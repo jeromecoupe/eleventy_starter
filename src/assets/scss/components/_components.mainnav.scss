@@ -29,12 +29,11 @@
   color: var(--color-black);
   text-decoration: none;
   display: inline-block;
-  padding-top: calc(12 / 16 * 1rem);
-  padding-bottom: calc(12 / 16 * 1rem);
+  padding-top: calc(6 / 16 * 1rem);
+  padding-bottom: calc(6 / 16 * 1rem);
 
   @include breakpoint(small) {
-    padding-left: calc(12 / 16 * 1rem);
-    padding-right: calc(12 / 16 * 1rem);
+    padding: calc(12 / 16 * 1rem);
   }
 }
 
