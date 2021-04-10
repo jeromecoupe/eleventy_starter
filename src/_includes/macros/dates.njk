@@ -1,0 +1,3 @@
+{% macro htmldate(date) -%}
+  <time datetime="{{- date | date('YYYY-MM-DD') -}}">{{- date|date("MMMM Do, Y") -}}</time>
+{%- endmacro %}

@@ -1,0 +1,33 @@
+{# variables #}
+{% set totalPages = pagination.pages | length %}
+{% set pageNumber = pagination.pageNumber %}
+{% set currentPage = pagination.pageNumber + 1 %}
+
+{# view #}
+{% if totalPages > 0 %}
+<nav aria-label="pagination">
+  <ul class="c-pagination">
+    {% if currentPage > 1 %}
+      <li class="c-pagination__item"><a class="c-pagination__first" href="{{ pagination.href.first }}">First</a></li>
+    {% endif %}
+    {% if pagination.hrefs[pageNumber - 2] %}
+      <li class="c-pagination__item"><a class="c-pagination__link" href="{{ pagination.hrefs[pageNumber - 2] }}">{{ currentPage - 2 }}</a></li>
+    {% endif %}
+    {% if pagination.hrefs[pageNumber - 1] %}
+      <li class="c-pagination__item"><a class="c-pagination__link" href="{{ pagination.hrefs[pageNumber - 1] }}">{{ currentPage - 1 }}</a></li>
+    {% endif %}
+
+    <li class="c-pagination__item"><span class="c-pagination__link  is-active">{{ currentPage }}</a></li>
+
+    {% if pagination.hrefs[pageNumber + 1] %}
+      <li class="c-pagination__item"><a class="c-pagination__link" href="{{ pagination.hrefs[pageNumber + 1] }}">{{ currentPage + 1 }}</a></li>
+    {% endif %}
+    {% if pagination.hrefs[pageNumber + 2] %}
+      <li class="c-pagination__item"><a class="c-pagination__link" href="{{ pagination.hrefs[pageNumber + 2] }}">{{ currentPage + 2 }}</a></li>
+    {% endif %}
+    {% if currentPage < totalPages %}
+      <li class="c-pagination__item"><a class="c-pagination__last" href="{{ pagination.href.last }}">Last</a></li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}

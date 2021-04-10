@@ -3,7 +3,10 @@ const now = new Date();
 module.exports = function (eleventyConfig) {
   // collections
   eleventyConfig.addCollection("blogposts", function (collection) {
-    return collection.getFilteredByGlob("./src/blog/*.md");
+    return collection
+      .getFilteredByGlob("./src/blog/*.md")
+      .filter((item) => item.date <= now && item.draft !== true)
+      .sort((a, b) => b.date - a.date);
   });
 
   // filters
@@ -18,6 +21,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
   eleventyConfig.addPassthroughCopy("./src/assets/img");
   eleventyConfig.addPassthroughCopy("./src/assets/fonts");
+
+  // deep merge
+  eleventyConfig.setDataDeepMerge(true);
 
   // override default config
   return {
