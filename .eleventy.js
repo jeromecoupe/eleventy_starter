@@ -2,7 +2,7 @@ module.exports = function (eleventyConfig) {
   // collections
   eleventyConfig.addCollection(
     "blogposts",
-    require("./eleventy/collections/blogpsts.js")
+    require("./eleventy/collections/blogposts.js")
   );
 
   // filters
