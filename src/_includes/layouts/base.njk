@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="/assets/css/main.css?ref={{ site.buildDate | date('X') }}">
 </head>
 <body>
-  {% include "components/header.njk" %}
+  {% include "partials/header.njk" %}
   {% block content %}{% endblock %}
-  {% include "components/footer.njk" %}
+  {% include "partials/footer.njk" %}
 </body>
 </html>
