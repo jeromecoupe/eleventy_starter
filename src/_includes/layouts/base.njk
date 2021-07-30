@@ -22,8 +22,8 @@
   <link rel="preload" as="font" crossorigin type="font/woff2" href="/assets/fonts/opensans-italic-webfont.woff2">
   <link rel="preload" as="font" crossorigin type="font/woff2" href="/assets/fonts/opensans-semibold-webfont.woff2">
 
-  {# JS (defer) #}
-  <script src="/assets/js/main.bundle.js?ref={{ site.buildDate | date('X') }}" defer></script>
+  {# JS (bundled ES6 - modules as cut the mustard) #}
+  <script type="module" src="/assets/js/main.bundle.js?ref={{ site.buildDate | date('X') }}"></script>
 
   {# CSS #}
   <link rel="stylesheet" href="/assets/css/main.css?ref={{ site.buildDate | date('X') }}">
