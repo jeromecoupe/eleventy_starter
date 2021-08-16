@@ -5,6 +5,6 @@
  * @return {String} Valid JSON string
  *
  */
-module.exports = str => {
+module.exports = (str) => {
   return JSON.stringify(str);
 };

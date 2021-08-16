@@ -11,7 +11,7 @@
 const lodash = require("lodash");
 
 module.exports = function (arr, key, value) {
-  return arr.filter(item => {
+  return arr.filter((item) => {
     let keyValue = lodash.get(item, key);
     return keyValue.includes(value);
   });

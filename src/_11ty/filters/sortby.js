@@ -13,7 +13,7 @@ module.exports = function (arr, key, locale = "en") {
     let valueA = lodash.get(a, key);
     let valueB = lodash.get(b, key);
 
-    if (typeof (valueA) === "string" && typeof (valueB) === "string") {
+    if (typeof valueA === "string" && typeof valueB === "string") {
       return valueA.localeCompare(valueB, locale, { sensitivity: "base" });
     }
 
