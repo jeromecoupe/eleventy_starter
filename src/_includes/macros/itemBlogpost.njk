@@ -1,0 +1,7 @@
+{% macro itemBlogpost(date, title, url, intro) %}
+<article>
+  <p><time datetime="{{- date | dateToISO -}}">{{- date | dateReadable -}}</time></p>
+  <h2><a href="{{ url }}">{{ title }}</a></h2>
+  <p>{{ intro }}</p>
+</article>
+{% endmacro %}

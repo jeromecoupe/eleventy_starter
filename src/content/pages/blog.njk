@@ -13,6 +13,8 @@ permalink: blog{% if pagination.pageNumber > 0 %}/p{{ pagination.pageNumber + 1 
 
 {% set navSection = "blog" %}
 
+{% from "macros/itemBlogpost.njk" import itemBlogpost %}
+
 {% block content %}
 <main>
   <div class="l-container">
@@ -22,11 +24,12 @@ permalink: blog{% if pagination.pageNumber > 0 %}/p{{ pagination.pageNumber + 1 
     {% for item in blogposts %}
       {% if loop.first %}<ul>{% endif %}
         <li>
-          <article>
-            <p><time datetime="{{- item.date | dateToISO -}}">{{- item.date | dateReadable -}}</time></p>
-            <h2><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
-            <p>{{ item.data.intro }}</p>
-          </article>
+          {{ itemBlogpost(
+            date=item.date,
+            title=item.data.title,
+            url=item.url,
+            intro=item.data.intro
+          ) }}
         </li>
       {% if loop.last %}</ul>{% endif %}
     {% else %}
