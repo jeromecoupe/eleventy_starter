@@ -7,8 +7,6 @@ permalink: blog{% if pagination.pageNumber > 0 %}/p{{ pagination.pageNumber + 1 
 ---
 {% extends "layouts/base.njk" %}
 
-{% import "macros/dates.njk" as dates %}
-
 {% set metaTitle = "Blog" %}
 {% set metaDescription = "This is an SEO description for this page" %}
 {% set metaImage = site.metaImage %}
@@ -25,7 +23,7 @@ permalink: blog{% if pagination.pageNumber > 0 %}/p{{ pagination.pageNumber + 1 
       {% if loop.first %}<ul>{% endif %}
         <li>
           <article>
-            <p>{{ dates.htmldate(item.date) }}</p>
+            <p><time datetime="{{- item.date | dateToISO -}}">{{- item.date | dateReadable -}}</time></p>
             <h2><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
             <p>{{ item.data.intro }}</p>
           </article>

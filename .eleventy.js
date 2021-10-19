@@ -6,7 +6,18 @@ module.exports = function (eleventyConfig) {
   );
 
   // filters
-  eleventyConfig.addFilter("date", require("./src/_11ty/filters/date.js"));
+  eleventyConfig.addFilter(
+    "dateToFormat",
+    require("./src/_11ty/filters/dateToFormat.js")
+  );
+  eleventyConfig.addFilter(
+    "dateReadable",
+    require("./src/_11ty/filters/dateReadable.js")
+  );
+  eleventyConfig.addFilter(
+    "dateToISO",
+    require("./src/_11ty/filters/dateToISO.js")
+  );
   eleventyConfig.addFilter(
     "exclude",
     require("./src/_11ty/filters/exclude.js")

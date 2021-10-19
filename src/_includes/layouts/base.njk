@@ -23,10 +23,10 @@
   <link rel="preload" as="font" crossorigin type="font/woff2" href="/assets/fonts/opensans-semibold-webfont.woff2">
 
   {# JS (bundled ES6 - modules as cut the mustard) #}
-  <script type="module" src="/assets/js/main.bundle.js?ref={{ site.buildDate | date('X') }}"></script>
+  <script type="module" src="/assets/js/main.bundle.js?ref={{ site.buildDate | dateToFormat('X') }}"></script>
 
   {# CSS #}
-  <link rel="stylesheet" href="/assets/css/main.css?ref={{ site.buildDate | date('X') }}">
+  <link rel="stylesheet" href="/assets/css/main.css?ref={{ site.buildDate | dateToFormat('X') }}">
 </head>
 <body>
   {% include "partials/header.njk" %}

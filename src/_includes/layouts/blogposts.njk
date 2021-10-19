@@ -1,7 +1,5 @@
 {% extends "layouts/base.njk" %}
 
-{% import "macros/dates.njk" as dates %}
-
 {% set metaTitle = title %}
 {% set metaDescription = intro %}
 {% set metaImage = site.url ~ "/assets/img/blogposts/600x600/" ~ mainImage %}
@@ -25,7 +23,7 @@
 
       <div class="c-blogpost__content">
         <header>
-          <p>{{ dates.htmldate(page.date) }}</p>
+          <p><time datetime="{{- page.date | dateToISO -}}">{{- page.date | dateReadable -}}</time></p>
           <h1 class="c-h1">{{ title }}</h1>
           <p>{{ intro }}</p>
         </header>
