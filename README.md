@@ -15,5 +15,4 @@ Using NPM scripts and Webpack as build tools.
 - sound project architecture
 - basic filters
 - sample content for a blogposts collection
-- sample date macro
 - sample pagination code
